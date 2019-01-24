@@ -22,28 +22,28 @@ allprojects {
 ```
 	
 ## Step 2. Find the dependencies
-[https://jitpack.io/com/github/conanchen/firstmeetgames/mservice-grpc-apis/master-SNAPSHOT/build.log](https://jitpack.io/com/github/conanchen/firstmeetgames/mservice-grpc-apis/master-SNAPSHOT/build.log)
+[https://jitpack.io/com/github/firstmeetgames/mservice-grpc-apis/V1.0.0.RELEASE/build.log](https://jitpack.io/com/github/firstmeetgames/mservice-grpc-apis/V1.0.0.RELEASE/build.log)
 ```angular2html
 Build artifacts:
-com.github.conanchen.firstmeetgames.mservice-grpc-apis:cms-article-grpc-java:master-1a87686494-1
-com.github.conanchen.firstmeetgames.mservice-grpc-apis:party-personemployee-grpc-java:master-1a87686494-1
-com.github.conanchen.firstmeetgames.mservice-grpc-apis:party-org8n-grpc-java:master-1a87686494-1
-com.github.conanchen.firstmeetgames.mservice-grpc-apis:authcow-grpc-java:master-1a87686494-1
-com.github.conanchen.firstmeetgames.mservice-grpc-apis:shopie-shop-grpc-java:master-1a87686494-1
-com.github.conanchen.firstmeetgames.mservice-grpc-apis:shopie-catalog-grpc-java:master-1a87686494-1
-com.github.conanchen.firstmeetgames.mservice-grpc-apis:gis-asset-grpc-java:master-1a87686494-1
-com.github.conanchen.firstmeetgames.mservice-grpc-apis:party-personhealth-grpc-java:master-1a87686494-1
-com.github.conanchen.firstmeetgames.mservice-grpc-apis:cms-articlecomment-grpc-java:master-1a87686494-1
-com.github.conanchen.firstmeetgames.mservice-grpc-apis:gis-geo-grpc-java:master-1a87686494-1
-com.github.conanchen.firstmeetgames.mservice-grpc-apis:party-personsocial-grpc-java:master-1a87686494-1
-com.github.conanchen.firstmeetgames.mservice-grpc-apis:shopie-order-grpc-java:master-1a87686494-1
-com.github.conanchen.firstmeetgames.mservice-grpc-apis:party-personevent-grpc-java:master-1a87686494-1
+com.github.firstmeetgames:mservice-grpc-apis:cms-article-grpc-java:master-1a87686494-1
+com.github.firstmeetgames:mservice-grpc-apis:party-personemployee-grpc-java:master-1a87686494-1
+com.github.firstmeetgames:mservice-grpc-apis:party-org8n-grpc-java:master-1a87686494-1
+com.github.firstmeetgames:mservice-grpc-apis:authcow-grpc-java:master-1a87686494-1
+com.github.firstmeetgames:mservice-grpc-apis:shopie-shop-grpc-java:master-1a87686494-1
+com.github.firstmeetgames:mservice-grpc-apis:shopie-catalog-grpc-java:master-1a87686494-1
+com.github.firstmeetgames:mservice-grpc-apis:gis-asset-grpc-java:master-1a87686494-1
+com.github.firstmeetgames:mservice-grpc-apis:party-personhealth-grpc-java:master-1a87686494-1
+com.github.firstmeetgames:mservice-grpc-apis:cms-articlecomment-grpc-java:master-1a87686494-1
+com.github.firstmeetgames:mservice-grpc-apis:gis-geo-grpc-java:master-1a87686494-1
+com.github.firstmeetgames:mservice-grpc-apis:party-personsocial-grpc-java:master-1a87686494-1
+com.github.firstmeetgames:mservice-grpc-apis:shopie-order-grpc-java:master-1a87686494-1
+com.github.firstmeetgames:mservice-grpc-apis:party-personevent-grpc-java:master-1a87686494-1
 ```
 ## Step 3. Add Dependencies As Needed To Your build.gradle
 ```gradle
 dependencies {
-    compile 'com.github.conanchen.firstmeetgames.mservice-grpc-apis:authcow-grpc-java:master-SNAPSHOT'
-    compile 'com.github.conanchen.firstmeetgames.mservice-grpc-apis:gis-asset-grpc-java:master-SNAPSHOT'
+    implementation 'com.github.firstmeetgames:mservice-grpc-apis:authcow-grpc-java:master-SNAPSHOT'
+    implementation 'com.github.firstmeetgames:mservice-grpc-apis:gis-asset-grpc-java:master-SNAPSHOT'
 }
 ```
 	

@@ -3,10 +3,10 @@ package firstmeetgames.api.hello;
 
 
 option java_multiple_files = true;
-option java_package = "com.github.conanchen.guoi.cloud.hello.grpc";
+option java_package = "com.github.firstmeetgames.mservice.grpc.apis.hello";
 option java_outer_classname = "HelloApiProto";
 
-import "guoi/cloud/common/common.proto";
+import "firstmeetgames/api/common/common.proto";
 import "google/rpc/status.proto";
 import "google/protobuf/timestamp.proto";
 
