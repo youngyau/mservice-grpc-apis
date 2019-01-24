@@ -1,0 +1,41 @@
+// Copyright 2015, gRPC Authors
+// All rights reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+syntax = "proto3";
+package firstmeetgames.api.common;
+
+option java_multiple_files = true;
+option java_package = "com.github.conanchen.guoi.cloud.common.grpc";
+option java_outer_classname = "DistrictProto";
+option objc_class_prefix = "DST";
+
+//行政区信息,参考http://lbs.amap.com/api/webservice/guide/api/district
+message District {
+    string id = 1; //自定义编号，如100000表示中国,110000表示北京，尽量使用adcode的值来填充。
+    string pid = 2; //上级编号，如北京110000的上级是中国100000
+
+    string name = 13; //行政区名称
+    string citycode = 11; //城市编码
+    string adcode = 12; //区域编码,街道没有独有的adcode，均继承父类（区县）的adcode
+    string center = 15; //城市中心点, 必须说明,在区县级别，有28个区县不能返回中心点,在乡镇/街道界别，有9262个乡镇/街道不能返回中心点
+    string level = 16; //行政区划级别
+    //    string polyline = 14; //行政区边界坐标点,当一个行政区范围，由完全分隔两块或者多块的地块组成，每块地的 polyline 坐标串以 | 分隔 。如北京 的 朝阳区
+    //    string country = 7; //:国家
+    //    province:省份（直辖市会在
+    //    province和city显示）
+    //    city:市（直辖市会在
+    //    province和city显示）
+    //    district:区县
+    //    street:街道
+}

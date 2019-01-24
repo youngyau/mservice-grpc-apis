@@ -1,0 +1,106 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    apply from: "$rootDir/blessedDeps.gradle"
+
+    repositories {
+        mavenCentral()
+        maven { url "https://oss.sonatype.org/content/repositories/releases/" }
+//        maven { url "http://192.168.1.250:8081/nexus/content/repositories/central" }
+    }
+    dependencies {
+        classpath "com.google.protobuf:protobuf-gradle-plugin:0.8.5"
+        classpath "pl.allegro.tech.build:axion-release-plugin:1.9.1"
+        classpath 'com.bmuschko:gradle-nexus-plugin:2.3.1'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+apply plugin: 'pl.allegro.tech.build.axion-release'
+scmVersion {
+    tag {
+        prefix = 'guoi'
+    }
+    versionCreator 'versionWithBranch'
+
+    hooks {
+        pre 'fileUpdate', [file: 'README.md', pattern: { v, p -> /(version.) $v/ }, replacement: { v, p -> "\$1 $v" }]
+        pre 'commit'
+    }
+}
+
+
+allprojects {
+    project.version = scmVersion.version
+    group 'com.github.conanchen.firstmeetgames.mservice-grpc-api'
+    version 'master-SNAPSHOT'
+    apply plugin: 'java'
+    apply plugin: 'com.bmuschko.nexus'
+
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
+    //编译JAVA文件时采用UTF-8
+    tasks.withType(Javadoc) {
+        options.addStringOption('Xdoclint:none', '-quiet')
+        options.addStringOption('encoding', 'UTF-8')
+        options.addStringOption('charSet', 'UTF-8')
+    }
+
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
+
+
+    }
+    configurations.all {
+        resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    }
+
+    extraArchive {
+        sources = false
+        tests = false
+        javadoc = false
+    }
+
+    nexus {
+        sign = true
+        repositoryUrl = 'http://192.168.1.250:8081/nexus/content/repositories/releases/'
+        snapshotRepositoryUrl = 'http://192.168.1.250:8081/nexus/content/repositories/snapshots/'
+    }
+
+
+    repositories {
+
+        mavenCentral()
+        maven { url "https://oss.sonatype.org/content/repositories/releases/" }
+//        maven { url "http://192.168.1.250:8081/nexus/content/repositories/central" }
+    }
+
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'maven'
+
+    task sourcesJar(type: Jar, dependsOn: classes) {
+        classifier = 'sources'
+        from sourceSets.main.allSource
+    }
+
+    task javadocJar(type: Jar, dependsOn: javadoc) {
+        classifier = 'javadoc'
+        from javadoc.destinationDir
+    }
+
+    artifacts {
+        archives jar
+        archives sourcesJar
+        archives javadocJar
+    }
+
+}
+
+project.logger.lifecycle("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+project.logger.lifecycle("~~~~~~~~~~~~~~~~~ROOT BUILD DONE!~~~~~~~~~~~~~~~~~~")
+project.logger.lifecycle("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")

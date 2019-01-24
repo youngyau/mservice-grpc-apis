@@ -1,0 +1,3 @@
+rootProject.name = 'mservice-grpc-apis'
+include 'hello-grpc-java'
+include 'zommon-grpc-java'

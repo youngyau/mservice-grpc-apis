@@ -1,0 +1,57 @@
+syntax = "proto3";
+package firstmeetgames.api.hello;
+
+
+option java_multiple_files = true;
+option java_package = "com.github.conanchen.guoi.cloud.hello.grpc";
+option java_outer_classname = "HelloApiProto";
+
+import "guoi/cloud/common/common.proto";
+import "google/rpc/status.proto";
+import "google/protobuf/timestamp.proto";
+
+// The greeter service definition.
+service HelloApi {
+    // Create a greeting
+    rpc CreateHello (CreateHelloRequest) returns (Hello) {
+    }
+
+    rpc ListHellos (ListHellosRequest) returns (ListHellosResponse) {
+    }
+}
+
+// The request message containing the user's name.
+message CreateHelloRequest {
+    string firstName = 1;
+    string lastName = 2;
+}
+
+message ListHellosRequest {
+    int64 lastUpdated = 1;
+    int32 size = 2;
+}
+
+// The hello resource message
+message Hello {
+    // 每个资源都有一个唯一资源名称
+    // Resource name of a hello. For example: "hellos/hello123".
+    string name = 99;
+
+    string firstName = 2;
+    string lastName = 3;
+
+    string message = 4;
+
+    google.protobuf.Timestamp create_time = 13;
+    google.protobuf.Timestamp update_time = 14;
+}
+
+// The response message containing the greetings
+message ListHellosResponse {
+    google.rpc.Status status = 999;
+
+    repeated Hello hello = 1;
+}
+
+
+
