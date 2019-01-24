@@ -22,28 +22,22 @@ allprojects {
 ```
 	
 ## Step 2. Find the dependencies
-[https://jitpack.io/com/github/firstmeetgames/mservice-grpc-apis/V1.0.0.RELEASE/build.log](https://jitpack.io/com/github/firstmeetgames/mservice-grpc-apis/V1.0.0.RELEASE/build.log)
+### master 分支
+1. [https://jitpack.io/com/github/firstmeetgames/mservice-grpc-apis/master-SNAPSHOT/build.log](https://jitpack.io/com/github/firstmeetgames/mservice-grpc-apis/master-SNAPSHOT/build.log)
+### release 分支
+2. [https://jitpack.io/com/github/firstmeetgames/mservice-grpc-apis/V1.0.0.RELEASE/build.log](https://jitpack.io/com/github/firstmeetgames/mservice-grpc-apis/V1.0.0.RELEASE/build.log)
+
 ```angular2html
 Build artifacts:
-com.github.firstmeetgames:mservice-grpc-apis:cms-article-grpc-java:master-1a87686494-1
-com.github.firstmeetgames:mservice-grpc-apis:party-personemployee-grpc-java:master-1a87686494-1
-com.github.firstmeetgames:mservice-grpc-apis:party-org8n-grpc-java:master-1a87686494-1
-com.github.firstmeetgames:mservice-grpc-apis:authcow-grpc-java:master-1a87686494-1
-com.github.firstmeetgames:mservice-grpc-apis:shopie-shop-grpc-java:master-1a87686494-1
-com.github.firstmeetgames:mservice-grpc-apis:shopie-catalog-grpc-java:master-1a87686494-1
-com.github.firstmeetgames:mservice-grpc-apis:gis-asset-grpc-java:master-1a87686494-1
-com.github.firstmeetgames:mservice-grpc-apis:party-personhealth-grpc-java:master-1a87686494-1
-com.github.firstmeetgames:mservice-grpc-apis:cms-articlecomment-grpc-java:master-1a87686494-1
-com.github.firstmeetgames:mservice-grpc-apis:gis-geo-grpc-java:master-1a87686494-1
-com.github.firstmeetgames:mservice-grpc-apis:party-personsocial-grpc-java:master-1a87686494-1
-com.github.firstmeetgames:mservice-grpc-apis:shopie-order-grpc-java:master-1a87686494-1
-com.github.firstmeetgames:mservice-grpc-apis:party-personevent-grpc-java:master-1a87686494-1
+com.github.firstmeetgames.mservice-grpc-apis:hello-grpc-java:V1.0.1.RELEASE
+com.github.firstmeetgames.mservice-grpc-apis:zommon-grpc-java:V1.0.1.RELEASE
+com.github.firstmeetgames.mservice-grpc-apis:mservice-grpc-apis:V1.0.1.RELEASE
 ```
 ## Step 3. Add Dependencies As Needed To Your build.gradle
 ```gradle
 dependencies {
-    implementation 'com.github.firstmeetgames:mservice-grpc-apis:authcow-grpc-java:master-SNAPSHOT'
-    implementation 'com.github.firstmeetgames:mservice-grpc-apis:gis-asset-grpc-java:master-SNAPSHOT'
+    implementation 'com.github.firstmeetgames.mservice-grpc-apis:hello-grpc-java:master-SNAPSHOT'
+    implementation 'com.github.firstmeetgames.mservice-grpc-apis:zommon-grpc-java:master-SNAPSHOT'
 }
 ```
 	
