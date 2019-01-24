@@ -23,8 +23,10 @@ allprojects {
 	
 ## Step 2. Find the dependencies
 ### master 分支
+> If you want to trigger the build immediately, you may click the below link:
 1. [https://jitpack.io/com/github/firstmeetgames/mservice-grpc-apis/master-SNAPSHOT/build.log](https://jitpack.io/com/github/firstmeetgames/mservice-grpc-apis/master-SNAPSHOT/build.log)
 ### release 分支
+> If you want to trigger the build immediately, you may click the below link:
 2. [https://jitpack.io/com/github/firstmeetgames/mservice-grpc-apis/V1.0.0.RELEASE/build.log](https://jitpack.io/com/github/firstmeetgames/mservice-grpc-apis/V1.0.0.RELEASE/build.log)
 
 ```angular2html
