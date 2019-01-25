@@ -1,0 +1,39 @@
+syntax = "proto3";
+package firstmeetgames.api.welfarepay;
+
+
+option java_multiple_files = true;
+option java_package = "com.github.firstmeetgames.mservice.grpc.apis.welfarepay";
+option java_outer_classname = "WelfarepayApiProto";
+
+import "firstmeetgames/api/common/common.proto";
+import "google/rpc/status.proto";
+import "google/protobuf/timestamp.proto";
+
+// The greeter service definition.
+service WelfarepayApi {
+    // Create a welfarepay
+    rpc CreateWelfarepay (CreateWelfarepayRequest) returns (Welfarepay) {
+    } 
+}
+
+// The request message containing the user's name.
+message CreateWelfarepayRequest {
+    string firstName = 1;
+    string lastName = 2;
+}
+
+// The Welfarepay resource message
+message Welfarepay {
+    // 每个资源都有一个唯一资源名称
+    // Resource name of a hello. For example: "welfarepays/wf123".
+    string name = 99;
+
+    string firstName = 2;
+    string lastName = 3;
+
+    string message = 4;
+
+    google.protobuf.Timestamp create_time = 13;
+    google.protobuf.Timestamp update_time = 14;
+}

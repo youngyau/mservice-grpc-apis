@@ -24,3 +24,13 @@ hs_err_pid*
 
 .idea/
 .gradle/
+libraries
+vcs.xml
+compiler.xml
+gradle.xml
+misc.xml
+modules.xml
+.gradle
+.gradle
+*.iml
+4.5.1

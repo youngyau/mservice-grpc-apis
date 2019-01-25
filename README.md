@@ -31,6 +31,7 @@ allprojects {
 
 ```angular2html
 Build artifacts:
+com.github.firstmeetgames.mservice-grpc-apis:uidgenerator-grpc-java:V1.0.1.RELEASE
 com.github.firstmeetgames.mservice-grpc-apis:hello-grpc-java:V1.0.1.RELEASE
 com.github.firstmeetgames.mservice-grpc-apis:zommon-grpc-java:V1.0.1.RELEASE
 com.github.firstmeetgames.mservice-grpc-apis:mservice-grpc-apis:V1.0.1.RELEASE
@@ -39,6 +40,7 @@ com.github.firstmeetgames.mservice-grpc-apis:mservice-grpc-apis:V1.0.1.RELEASE
 ```gradle
 dependencies {
     implementation 'com.github.firstmeetgames.mservice-grpc-apis:hello-grpc-java:master-SNAPSHOT'
+    implementation 'com.github.firstmeetgames.mservice-grpc-api:uidgenerator-grpc-java:master-SNAPSHOT'
     implementation 'com.github.firstmeetgames.mservice-grpc-apis:zommon-grpc-java:master-SNAPSHOT'
 }
 ```
