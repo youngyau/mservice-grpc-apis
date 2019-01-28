@@ -1,0 +1,57 @@
+syntax = "proto3";
+package firstmeetgames.api.notice;
+
+
+option java_multiple_files = true;
+option java_package = "com.github.firstmeetgames.mservice.grpc.apis.notice";
+option java_outer_classname = "NoticeApiProto";
+
+import "firstmeetgames/api/common/common.proto";
+import "google/rpc/status.proto";
+import "google/protobuf/timestamp.proto";
+
+// The greeter service definition.
+service NoticeApi {
+    // Create a greeting
+    rpc CreateNotice (CreateNoticeRequest) returns (Notice) {
+    }
+
+    rpc ListNotices (ListNoticesRequest) returns (ListNoticesResponse) {
+    }
+}
+
+// The request message containing the user's name.
+message CreateNoticeRequest {
+    string firstName = 1;
+    string lastName = 2;
+}
+
+message ListNoticesRequest {
+    int64 lastUpdated = 1;
+    int32 size = 2;
+}
+
+// The notice resource message
+message Notice {
+    // 每个资源都有一个唯一资源名称
+    // Resource name of a notice. For example: "notices/notice123".
+    string name = 99;
+
+    string firstName = 2;
+    string lastName = 3;
+
+    string message = 4;
+
+    google.protobuf.Timestamp create_time = 13;
+    google.protobuf.Timestamp update_time = 14;
+}
+
+// The response message containing the greetings
+message ListNoticesResponse {
+    google.rpc.Status status = 999;
+
+    repeated Notice notice = 1;
+}
+
+
+
