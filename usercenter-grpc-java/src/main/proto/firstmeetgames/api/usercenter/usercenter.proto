@@ -1,0 +1,58 @@
+syntax = "proto3";
+package firstmeetgames.api.usercenter;
+
+
+option java_multiple_files = true;
+option java_package = "com.github.firstmeetgames.mservice.grpc.apis.usercenter";
+option java_outer_classname = "ClientApiProto";
+
+import "firstmeetgames/api/common/common.proto";
+import "google/rpc/status.proto";
+import "google/protobuf/timestamp.proto";
+
+// The greeter service definition.
+service ClientApi {
+    // Create a greeting
+    rpc CreateClient (CreateClientRequest) returns (Client) {
+    }
+
+    rpc ListClients (ListClientsRequest) returns (ListClientsResponse) {
+    }
+}
+
+
+// The request message containing the user's name.
+message CreateClientRequest {
+    string firstName = 1;
+    string lastName = 2;
+}
+
+message ListClientsRequest {
+    int64 lastUpdated = 1;
+    int32 size = 2;
+}
+
+// The usercenter resource message
+message Client {
+    // 每个资源都有一个唯一资源名称
+    // Resource name of a usercenter. For example: "usercenters/usercenter123".
+    string name = 99;
+
+    string firstName = 2;
+    string lastName = 3;
+
+    string message = 4;
+
+    google.protobuf.Timestamp create_time = 13;
+    google.protobuf.Timestamp update_time = 14;
+}
+
+// The response message containing the greetings
+message ListClientsResponse {
+    google.rpc.Status status = 999;
+
+    repeated Client usercenter = 1;
+}
+
+
+
