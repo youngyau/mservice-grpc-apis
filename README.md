@@ -9,7 +9,7 @@ Define firstmeetgames mservice grpc api :
 - And [local copy of Google real life example servicemanager.proto](apiexample.txt)
 
 
-# How to use guo-micro-apis in your JAVA application 
+# How to use mservice-grpc-apis in your JAVA application 
 ## Step 1. Add the JitPack repository to your build file
 Add it in your root build.gradle at the end of repositories:
 ```gradle
