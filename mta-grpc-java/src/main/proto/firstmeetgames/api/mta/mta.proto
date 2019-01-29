@@ -17,7 +17,7 @@ service MtaApi {
     }
 
     // Create a SDKActivatedEvent
-    rpc CreateSDKActivatedEvent (CreateSDKActivatedEventEventRequest) returns (CreateSDKActivatedEventResponse) {
+    rpc CreateSDKActivatedEvent (CreateSDKActivatedEventRequest) returns (CreateSDKActivatedEventResponse) {
     }
 }
 
