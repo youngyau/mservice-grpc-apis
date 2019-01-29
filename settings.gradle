@@ -1,5 +1,6 @@
 rootProject.name = 'mservice-grpc-apis'
 include 'hello-grpc-java'
+include 'mta-grpc-java'
 include 'notice-grpc-java'
 include 'uidgenerator-grpc-java'
 include 'usercenter-grpc-java'

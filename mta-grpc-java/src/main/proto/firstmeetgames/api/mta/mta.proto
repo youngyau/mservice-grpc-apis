@@ -1,0 +1,78 @@
+syntax = "proto3";
+package firstmeetgames.api.mta;
+
+
+option java_multiple_files = true;
+option java_package = "com.github.firstmeetgames.mservice.grpc.apis.mta";
+option java_outer_classname = "MtaApiProto";
+
+import "firstmeetgames/api/common/common.proto";
+import "google/rpc/status.proto";
+import "google/protobuf/timestamp.proto";
+
+// The greeter service definition.
+service MtaApi {
+    // Create a CustomizedEvent
+    rpc CreateCustomizedEvent (CreateCustomizedEventRequest) returns (CreateCustomizedEventResponse) {
+    }
+
+    // Create a SDKActivatedEvent
+    rpc CreateSDKActivatedEvent (CreateSDKActivatedEventEventRequest) returns (CreateSDKActivatedEventResponse) {
+    }
+}
+
+// The request message containing the user's name.
+message CreateCustomizedEventRequest {
+    string firstName = 1;
+    string lastName = 2;
+}
+
+message CreateCustomizedEventResponse {
+    google.rpc.Status status = 999;
+
+    CustomizedEvent event = 1;
+}
+
+// The mta resource message
+message CustomizedEvent {
+    // 每个资源都有一个唯一资源名称
+    // Resource name of a mta. For example: "mtas/mta123".
+    string name = 99;
+
+    string firstName = 2;
+    string lastName = 3;
+
+    string message = 4;
+
+    google.protobuf.Timestamp create_time = 13;
+    google.protobuf.Timestamp update_time = 14;
+}
+
+
+
+// The request message containing the user's name.
+message CreateSDKActivatedEventRequest {
+    string firstName = 1;
+    string lastName = 2;
+}
+
+message CreateSDKActivatedEventResponse {
+    google.rpc.Status status = 999;
+
+    SDKActivatedEvent event = 1;
+}
+
+// The mta resource message
+message SDKActivatedEvent {
+    // 每个资源都有一个唯一资源名称
+    // Resource name of a mta. For example: "mtas/mta123".
+    string name = 99;
+
+    string firstName = 2;
+    string lastName = 3;
+
+    string message = 4;
+
+    google.protobuf.Timestamp create_time = 13;
+    google.protobuf.Timestamp update_time = 14;
+}
