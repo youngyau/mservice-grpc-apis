@@ -12,47 +12,54 @@ import "google/protobuf/timestamp.proto";
 
 // The greeter service definition.
 service ClientApi {
-    // Create a greeting
-    rpc CreateClient (CreateClientRequest) returns (Client) {
-    }
 
-    rpc ListClients (ListClientsRequest) returns (ListClientsResponse) {
-    }
+  rpc FindClient (FindClientRequest) returns (FindClientResponse) {
+  }
+
 }
 
+message FindClientResponse {
+  string clientId = 1;
 
-// The request message containing the user's name.
-message CreateClientRequest {
-    string firstName = 1;
-    string lastName = 2;
+  string clientSecret = 2;
+
+  string scopes = 3;
+
+  string authorizedGrantTypes = 4;
+
+  string clientName = 5;
+
+  string company = 6;
 }
 
-message ListClientsRequest {
-    int64 lastUpdated = 1;
-    int32 size = 2;
+message FindClientRequest {
+  string chujianClientToken = 1;
 }
 
-// The usercenter resource message
-message Client {
-    // 每个资源都有一个唯一资源名称
-    // Resource name of a usercenter. For example: "usercenters/usercenter123".
-    string name = 99;
+service TokenApi {
 
-    string firstName = 2;
-    string lastName = 3;
+  rpc Token4User (Token4UserRequest) returns (Token4UserResponse) {
+  }
 
-    string message = 4;
-
-    google.protobuf.Timestamp create_time = 13;
-    google.protobuf.Timestamp update_time = 14;
 }
 
-// The response message containing the greetings
-message ListClientsResponse {
-    google.rpc.Status status = 999;
+message Token4UserRequest {
+  string clientId = 1;
 
-    repeated Client usercenter = 1;
+  string clientSecret = 2;
+
+  string userId = 3;
+
+  string userSource = 4;
+
+  string username = 5;
+
+  string ttg = 6;
 }
 
-
-
+message Token4UserResponse {
+  string accessToken = 1;
+  string refreshToken = 2;
+  string tokenType = 3;
+  string expiresIn = 4;
+}
