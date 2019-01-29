@@ -47,4 +47,4 @@ idea {
     }
 }
 
-project.logger.lifecycle("~~~~~~~~~~~~~~~~~hello-grpc-java   BUILD !~~~~~~~~~~~~~~~~~~")
+project.logger.lifecycle("~~~~~~~~~~~~~~~~~ welfarepay-grpc-java   BUILD !~~~~~~~~~~~~~~~~~~")
