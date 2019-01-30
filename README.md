@@ -36,7 +36,7 @@ com.github.firstmeetgames.mservice-grpc-apis:hello-grpc-java:V1.0.1.RELEASE
 com.github.firstmeetgames.mservice-grpc-apis:zommon-grpc-java:V1.0.1.RELEASE
 com.github.firstmeetgames.mservice-grpc-apis:mservice-grpc-apis:V1.0.1.RELEASE
 ```
-## Step 3. Add Dependencies As Needed To Your build.gradle
+## Step 3. Add dependencies as needed To your build.gradle
 ```gradle
 dependencies {
     implementation 'com.github.firstmeetgames.mservice-grpc-apis:hello-grpc-java:master-SNAPSHOT'
