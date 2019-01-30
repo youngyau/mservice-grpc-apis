@@ -20,7 +20,6 @@ service UidgeneratorApi {
 
 // The request message containing the user's name.
 message CreateUidRequest {
-    string chujianClientToken = 1;
 }
 
 // The uidgenerator resource message
