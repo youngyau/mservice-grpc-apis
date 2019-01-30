@@ -38,6 +38,9 @@ service UserApi {
   rpc CreateToken (CreateTokenRequest) returns (CreateTokenResponse) {
   }
 
+  rpc IncrementTokenVersion (IncrementTokenVersionRequest) returns (IncrementTokenVersionResponse) {
+  }
+
 }
 
 message CreateTokenRequest {
@@ -59,4 +62,11 @@ message CreateTokenResponse {
   string refreshToken = 2;
   string tokenType = 3;
   string expiresIn = 4;
+}
+
+message IncrementTokenVersionRequest {
+  string userId = 1;
+}
+
+message IncrementTokenVersionResponse {
 }
