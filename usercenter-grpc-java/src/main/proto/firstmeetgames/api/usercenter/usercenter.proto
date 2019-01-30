@@ -58,6 +58,7 @@ message CreateTokenRequest {
 }
 
 message CreateTokenResponse {
+
   string accessToken = 1;
   string refreshToken = 2;
   string tokenType = 3;
