@@ -60,8 +60,6 @@ message CreateTokenResponse {
 
   string accessToken = 1;
   string refreshToken = 2;
-  string tokenType = 3;
-  int64 expiresIn = 4;
 }
 
 message IncrementTokenVersionRequest {
