@@ -11,9 +11,14 @@ import "google/rpc/status.proto";
 import "google/protobuf/timestamp.proto";
 
 // The greeter service definition.
-service ClientApi {
+service UsercenterApi {
 
   rpc FindClient (FindClientRequest) returns (FindClientResponse) {
+  }
+  rpc CreateToken (CreateTokenRequest) returns (CreateTokenResponse) {
+  }
+
+  rpc IncrementTokenVersion (IncrementTokenVersionRequest) returns (IncrementTokenVersionResponse) {
   }
 
 }
@@ -30,16 +35,6 @@ message FindClientResponse {
 
 message FindClientRequest {
   string clientId = 1;
-}
-
-service UserApi {
-
-  rpc CreateToken (CreateTokenRequest) returns (CreateTokenResponse) {
-  }
-
-  rpc IncrementTokenVersion (IncrementTokenVersionRequest) returns (IncrementTokenVersionResponse) {
-  }
-
 }
 
 message CreateTokenRequest {
