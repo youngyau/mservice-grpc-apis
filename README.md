@@ -56,6 +56,39 @@ Content type: application/json
 
 The webhook will trigger a build for branches that you have previously used with JitPack. So make sure you have requested master-SNAPSHOT from JitPack before adding a webhook.
 
+# Design 
+1. [https://cloud.google.com/apis/design/](https://cloud.google.com/apis/design/)
+2. [Envoy and gRPC-Web: a fresh new alternative to REST](https://blog.envoyproxy.io/envoy-and-grpc-web-a-fresh-new-alternative-to-rest-6504ce7eb880)
+3. [Seamless Cloud-Native Apps with gRPC-Web and Istio](https://venilnoronha.io/seamless-cloud-native-apps-with-grpc-web-and-istio)
+
+## Reference 
+My team has been using gRPC + Improbable's grpc-web + Typescript for a green field project and it has been amazing.
+- Typing all the way to the frontend.
+
+- gRPC/protobuf forces you to describe your interfaces and are self-documenting.
+
+- gRPC semantics like error codes and deadlines (if you propagate them through your stack, they're particularly useful - for instance, we cancel database transactions across service boundaries if a request times out).
+
+- Performance is great (but we're far from seeing bottlenecks with JSON, it's not the reason we choose gRPC).
+
+- We use grpc-gateway which auto-generates a REST proxy for our customers. We sometimes use it for interactive debugging. 
+
+- Rather than importing database models for our management tools and one-off scripts, using the API is so frictionless that we even use it inside our backend code and for CLI utilities.
+
+The Google API design guide is helpful: [https://cloud.google.com/apis/design](https://cloud.google.com/apis/design)
+
+One piece of advice: Treat your gRPC calls like you would treat a GraphQL resolver - if you squint your eyes, they're very similar concepts.
+
+Rather than specifying a GraphQL query, you specify a Field Mask.
+
+https://developers.google.com/protocol-buffers/docs/referenc...
+
+Happy to answer questions on our experience.
+
+1: [https://github.com/improbable-eng/grpc-web](https://github.com/improbable-eng/grpc-web)
+
+2: [https://github.com/grpc-ecosystem/grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway)
+
 
 # Pagination
 ## [Paginating Real-Time Data with Cursor Based Pagination](https://www.sitepoint.com/paginating-real-time-data-cursor-based-pagination/)
