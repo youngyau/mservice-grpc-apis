@@ -89,6 +89,9 @@ Happy to answer questions on our experience.
 
 2: [https://github.com/grpc-ecosystem/grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway)
 
+3: [Our Experience Designing and Building gRPC Services](https://dzone.com/articles/our-experience-designing-and-building-grpc-service)
+
+4: [使用gRPC-Gateway快速构建微服务](https://juejin.im/entry/5b29f49b6fb9a00e562c465a)
 
 # Pagination
 ## [Paginating Real-Time Data with Cursor Based Pagination](https://www.sitepoint.com/paginating-real-time-data-cursor-based-pagination/)

@@ -6,7 +6,6 @@ buildscript {
     repositories {
         mavenCentral()
         maven { url "https://oss.sonatype.org/content/repositories/releases/" }
-//        maven { url "http://192.168.1.250:8081/nexus/content/repositories/central" }
     }
     dependencies {
         classpath "com.google.protobuf:protobuf-gradle-plugin:0.8.5"
@@ -36,7 +35,6 @@ allprojects {
     group 'com.github.conanchen.firstmeetgames.mservice-grpc-api'
     version 'master-SNAPSHOT'
     apply plugin: 'java'
-    apply plugin: 'com.bmuschko.nexus'
 
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
@@ -57,24 +55,10 @@ allprojects {
         resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
     }
 
-    extraArchive {
-        sources = false
-        tests = false
-        javadoc = false
-    }
-
-    nexus {
-        sign = true
-        repositoryUrl = 'http://192.168.1.250:8081/nexus/content/repositories/releases/'
-        snapshotRepositoryUrl = 'http://192.168.1.250:8081/nexus/content/repositories/snapshots/'
-    }
-
-
     repositories {
 
         mavenCentral()
         maven { url "https://oss.sonatype.org/content/repositories/releases/" }
-//        maven { url "http://192.168.1.250:8081/nexus/content/repositories/central" }
     }
 
 }

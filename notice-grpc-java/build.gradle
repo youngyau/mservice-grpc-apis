@@ -6,6 +6,7 @@ plugins {
 
 
 dependencies {
+    compile "com.google.api.grpc:proto-google-common-protos:${googleCommonProtosVersion}"
     compile project(":zommon-grpc-java")
 }
 
