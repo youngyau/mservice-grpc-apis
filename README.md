@@ -25,6 +25,17 @@ allprojects {
 ### master 分支
 > If you want to trigger the build immediately, you may click the below link:
 1. [https://jitpack.io/com/github/firstmeetgames/mservice-grpc-apis/master-SNAPSHOT/build.log](https://jitpack.io/com/github/firstmeetgames/mservice-grpc-apis/master-SNAPSHOT/build.log)
+```
+Build artifacts:
+com.github.firstmeetgames.mservice-grpc-apis:uidgenerator-grpc-java:master-c0715001b4-1
+com.github.firstmeetgames.mservice-grpc-apis:welfarepay-grpc-java:master-c0715001b4-1
+com.github.firstmeetgames.mservice-grpc-apis:notice-grpc-java:master-c0715001b4-1
+com.github.firstmeetgames.mservice-grpc-apis:usercenter-grpc-java:master-c0715001b4-1
+com.github.firstmeetgames.mservice-grpc-apis:zommon-grpc-java:master-c0715001b4-1
+com.github.firstmeetgames.mservice-grpc-apis:hello-grpc-java:master-c0715001b4-1
+com.github.firstmeetgames.mservice-grpc-apis:mta-grpc-java:master-c0715001b4-1
+```
+
 ### release 分支
 > If you want to trigger the build immediately, you may click the below link:
 2. [https://jitpack.io/com/github/firstmeetgames/mservice-grpc-apis/V1.0.0.RELEASE/build.log](https://jitpack.io/com/github/firstmeetgames/mservice-grpc-apis/V1.0.0.RELEASE/build.log)
@@ -34,7 +45,6 @@ Build artifacts:
 com.github.firstmeetgames.mservice-grpc-apis:uidgenerator-grpc-java:V1.0.1.RELEASE
 com.github.firstmeetgames.mservice-grpc-apis:hello-grpc-java:V1.0.1.RELEASE
 com.github.firstmeetgames.mservice-grpc-apis:zommon-grpc-java:V1.0.1.RELEASE
-com.github.firstmeetgames.mservice-grpc-apis:mservice-grpc-apis:V1.0.1.RELEASE
 ```
 ## Step 3. Add dependencies as needed To your build.gradle
 ```gradle
