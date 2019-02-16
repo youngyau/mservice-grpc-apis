@@ -95,13 +95,12 @@ https://developers.google.com/protocol-buffers/docs/referenc...
 
 Happy to answer questions on our experience.
 
-1: [https://github.com/improbable-eng/grpc-web](https://github.com/improbable-eng/grpc-web)
-
-2: [https://github.com/grpc-ecosystem/grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway)
-
-3: [Our Experience Designing and Building gRPC Services](https://dzone.com/articles/our-experience-designing-and-building-grpc-service)
-
+1: [This guide gets you started with gRPC-Web with a simple working example from the browser.](https://grpc.io/docs/quickstart/web.html)
+2: [https://github.com/improbable-eng/grpc-web](https://github.com/improbable-eng/grpc-web)
+3: [https://github.com/grpc-ecosystem/grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway)
 4: [使用gRPC-Gateway快速构建微服务](https://juejin.im/entry/5b29f49b6fb9a00e562c465a)
+5: [Our Experience Designing and Building gRPC Services](https://dzone.com/articles/our-experience-designing-and-building-grpc-service)
+6: [gRPC Server side load balancing with Envoy proxy](https://github.com/masoodfaisal/grpc-example)
 
 # Pagination
 ## [Paginating Real-Time Data with Cursor Based Pagination](https://www.sitepoint.com/paginating-real-time-data-cursor-based-pagination/)
