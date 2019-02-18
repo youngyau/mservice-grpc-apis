@@ -101,6 +101,7 @@ Happy to answer questions on our experience.
 4: [使用gRPC-Gateway快速构建微服务](https://juejin.im/entry/5b29f49b6fb9a00e562c465a)
 5: [Our Experience Designing and Building gRPC Services](https://dzone.com/articles/our-experience-designing-and-building-grpc-service)
 6: [gRPC Server side load balancing with Envoy proxy](https://github.com/masoodfaisal/grpc-example)
+7: [How we built Monzo Chat on Android](https://monzo.com/blog/2019/02/11/building-monzo-chat-on-android/)
 
 # Pagination
 ## [Paginating Real-Time Data with Cursor Based Pagination](https://www.sitepoint.com/paginating-real-time-data-cursor-based-pagination/)
