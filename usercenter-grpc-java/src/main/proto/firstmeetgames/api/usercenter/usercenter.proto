@@ -15,6 +15,10 @@ service UsercenterApi {
 
   rpc GetClient (GetClientRequest) returns (GetClientResponse) {
   }
+
+  rpc CheckClient (CheckClientRequest) returns (CheckClientResponse) {
+  }
+
   rpc CreateUserToken (CreateUserTokenRequest) returns (CreateUserTokenResponse) {
   }
 
@@ -39,18 +43,27 @@ message GetClientResponse {
   google.rpc.Status status = 5;
 }
 
-message CreateUserTokenRequest {
+message CheckClientRequest {
+
   string clientId = 1;
 
   string clientSecret = 2;
+}
 
-  string userId = 3;
+message CheckClientResponse {
+  google.rpc.Status status = 1;
+}
 
-  string userSource = 4;
+message CreateUserTokenRequest {
+  string clientId = 1;
 
-  string username = 5;
+  string userId = 2;
 
-  string ttg = 6;
+  string userSource = 3;
+
+  string username = 4;
+
+  string ttg = 5;
 }
 
 message CreateUserTokenResponse {
