@@ -23,6 +23,10 @@ service UsercenterApi {
 
 }
 
+message GetClientRequest {
+  string clientId = 1;
+}
+
 message Client {
   string clientId = 1;
 
@@ -31,10 +35,8 @@ message Client {
   string scopes = 3;
 
   string authorizedGrantTypes = 4;
-}
 
-message GetClientRequest {
-  string clientId = 1;
+  google.rpc.Status status = 5;
 }
 
 message CreateUserTokenRequest {
@@ -54,7 +56,10 @@ message CreateUserTokenRequest {
 message UserToken {
 
   string accessToken = 1;
+
   string refreshToken = 2;
+
+  google.rpc.Status status = 3;
 }
 
 message IncrementTokenVersionRequest {
@@ -62,4 +67,5 @@ message IncrementTokenVersionRequest {
 }
 
 message IncrementTokenVersionResponse {
+  google.rpc.Status status = 1;
 }
