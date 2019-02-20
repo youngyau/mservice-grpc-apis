@@ -13,9 +13,9 @@ import "google/protobuf/timestamp.proto";
 // The greeter service definition.
 service UsercenterApi {
 
-  rpc GetClient (GetClientRequest) returns (Client) {
+  rpc GetClient (GetClientRequest) returns (CreateUserTokenResponse) {
   }
-  rpc CreateUserToken (CreateUserTokenRequest) returns (UserToken) {
+  rpc CreateUserToken (CreateUserTokenRequest) returns (CreateUserTokenResponse) {
   }
 
   rpc IncrementTokenVersion (IncrementTokenVersionRequest) returns (IncrementTokenVersionResponse) {
@@ -23,7 +23,11 @@ service UsercenterApi {
 
 }
 
-message Client {
+message GetClientRequest {
+  string clientId = 1;
+}
+
+message CreateUserTokenResponse {
   string clientId = 1;
 
   string clientSecret = 2;
@@ -31,10 +35,8 @@ message Client {
   string scopes = 3;
 
   string authorizedGrantTypes = 4;
-}
 
-message GetClientRequest {
-  string clientId = 1;
+  google.rpc.Status status = 5;
 }
 
 message CreateUserTokenRequest {
@@ -51,10 +53,13 @@ message CreateUserTokenRequest {
   string ttg = 6;
 }
 
-message UserToken {
+message CreateUserTokenResponse {
 
   string accessToken = 1;
+
   string refreshToken = 2;
+
+  google.rpc.Status status = 3;
 }
 
 message IncrementTokenVersionRequest {
@@ -62,4 +67,5 @@ message IncrementTokenVersionRequest {
 }
 
 message IncrementTokenVersionResponse {
+  google.rpc.Status status = 1;
 }

@@ -12,9 +12,9 @@ import "google/protobuf/timestamp.proto";
 
 // The greeter service definition.
 service UidgeneratorApi {
-    // Create a uid
-    rpc CreateUid (CreateUidRequest) returns (Uid) {
-    }
+  // Create a uid
+  rpc CreateUid (CreateUidRequest) returns (CreateUidResponse) {
+  }
 
 }
 
@@ -23,9 +23,11 @@ message CreateUidRequest {
 }
 
 // The uidgenerator resource message
-message Uid {
-    // 每个资源都有一个唯一资源名称
-    // Resource name of a uidgenerator. For example: "uidgenerators/uidgenerator123".
-    string uid = 1;
+message CreateUidResponse {
+  // 每个资源都有一个唯一资源名称
+  // Resource name of a uidgenerator. For example: "uidgenerators/uidgenerator123".
+  string uid = 1;
+
+  google.rpc.Status status = 2;
 }
 
