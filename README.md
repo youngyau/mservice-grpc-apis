@@ -102,6 +102,7 @@ Happy to answer questions on our experience.
 5. [Our Experience Designing and Building gRPC Services](https://dzone.com/articles/our-experience-designing-and-building-grpc-service)
 6. [gRPC Server side load balancing with Envoy proxy](https://github.com/masoodfaisal/grpc-example)
 7. [How we built Monzo Chat on Android](https://monzo.com/blog/2019/02/11/building-monzo-chat-on-android/)
+8. [This page documents habits and styles I've found useful when working with gRPC and Protocol Buffers.](https://john-millikin.com/effective-grpc)
 
 # Pagination
 ## [Paginating Real-Time Data with Cursor Based Pagination](https://www.sitepoint.com/paginating-real-time-data-cursor-based-pagination/)
