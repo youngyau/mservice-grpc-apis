@@ -1,0 +1,83 @@
+syntax = "proto3";
+package firstmeetgames.api.eventgate;
+
+
+option java_multiple_files = true;
+option java_package = "com.github.firstmeetgames.mservice.grpc.apis.eventgate";
+option java_outer_classname = "EventgateApiProto";
+
+
+import "google/api/annotations.proto";
+import "firstmeetgames/api/common/common.proto";
+import "google/rpc/status.proto";
+import "google/protobuf/timestamp.proto";
+
+// The eventgate service definition.
+service EventgateApi {
+    // Publish an event
+    rpc PublishEvent (PublishEventRequest) returns (PublishEventResponse) {
+
+        option (google.api.http) = {
+            post: "/eventgate"
+            body: "*"
+        };
+    }
+}
+
+// The request message containing the user's name.
+message PublishEventRequest {
+	Event event = 1;
+    // Next Index = 2
+}
+
+message PublishEventResponse {
+	Event event = 1;
+    // Next Index = 2
+}
+
+message Event{
+	oneof event{
+		HelloEvent helloEvent = 1;
+		WorldEvent worldEvent = 2;
+        // Next Index = 3
+	}
+}
+
+// The eventgate resource message
+message HelloEvent {
+    // 每个资源都有一个唯一资源名称
+    // Resource name of a eventgate. For example: "hellos/hello123".
+    string name = 99;
+
+    string firstName = 1;
+    string lastName = 2;
+
+    string message = 3;
+
+    google.protobuf.Timestamp create_time = 4;
+    google.protobuf.Timestamp update_time = 5;
+
+    // Next Index = 6
+}
+
+
+
+
+// The eventgate resource message
+message WorldEvent {
+    // 每个资源都有一个唯一资源名称
+    // Resource name of a eventgate. For example: "hellos/hello123".
+    string name = 99;
+
+    string firstName = 1;
+    string lastName = 2;
+
+    string message = 3;
+
+    google.protobuf.Timestamp create_time = 4;
+    google.protobuf.Timestamp update_time = 5;
+
+    // Next Index = 6
+}
+
+

@@ -1,4 +1,5 @@
 rootProject.name = 'mservice-grpc-apis'
+include 'eventgate-grpc-java'
 include 'hello-grpc-java'
 include 'mta-grpc-java'
 include 'notice-grpc-java'
