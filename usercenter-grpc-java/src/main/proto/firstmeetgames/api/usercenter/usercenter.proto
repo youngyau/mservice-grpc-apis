@@ -13,12 +13,13 @@ import "google/protobuf/timestamp.proto";
 // The greeter service definition.
 service UsercenterApi {
 
-  rpc GetClient (GetClientRequest) returns (CreateUserTokenResponse) {
-  }
-  rpc CreateUserToken (CreateUserTokenRequest) returns (CreateUserTokenResponse) {
+  rpc GetClient (GetClientRequest) returns (GetClientResponse) {
   }
 
-  rpc IncrementTokenVersion (IncrementTokenVersionRequest) returns (IncrementTokenVersionResponse) {
+  rpc CheckClient (CheckClientRequest) returns (CheckClientResponse) {
+  }
+
+  rpc CreateUserToken (CreateUserTokenRequest) returns (CreateUserTokenResponse) {
   }
 
 }
@@ -27,7 +28,7 @@ message GetClientRequest {
   string clientId = 1;
 }
 
-message CreateUserTokenResponse {
+message GetClientResponse {
   string clientId = 1;
 
   string clientSecret = 2;
@@ -39,18 +40,27 @@ message CreateUserTokenResponse {
   google.rpc.Status status = 5;
 }
 
-message CreateUserTokenRequest {
+message CheckClientRequest {
+
   string clientId = 1;
 
   string clientSecret = 2;
+}
 
-  string userId = 3;
+message CheckClientResponse {
+  google.rpc.Status status = 1;
+}
 
-  string userSource = 4;
+message CreateUserTokenRequest {
+  string clientId = 1;
 
-  string username = 5;
+  string userId = 2;
 
-  string ttg = 6;
+  string userSource = 3;
+
+  string username = 4;
+
+  string ttg = 5;
 }
 
 message CreateUserTokenResponse {
@@ -60,12 +70,4 @@ message CreateUserTokenResponse {
   string refreshToken = 2;
 
   google.rpc.Status status = 3;
-}
-
-message IncrementTokenVersionRequest {
-  string userId = 1;
-}
-
-message IncrementTokenVersionResponse {
-  google.rpc.Status status = 1;
 }
