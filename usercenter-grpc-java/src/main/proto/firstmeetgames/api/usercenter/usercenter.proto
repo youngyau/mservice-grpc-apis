@@ -22,9 +22,6 @@ service UsercenterApi {
   rpc CreateUserToken (CreateUserTokenRequest) returns (CreateUserTokenResponse) {
   }
 
-  rpc IncrementTokenVersion (IncrementTokenVersionRequest) returns (IncrementTokenVersionResponse) {
-  }
-
 }
 
 message GetClientRequest {
@@ -73,12 +70,4 @@ message CreateUserTokenResponse {
   string refreshToken = 2;
 
   google.rpc.Status status = 3;
-}
-
-message IncrementTokenVersionRequest {
-  string userId = 1;
-}
-
-message IncrementTokenVersionResponse {
-  google.rpc.Status status = 1;
 }
