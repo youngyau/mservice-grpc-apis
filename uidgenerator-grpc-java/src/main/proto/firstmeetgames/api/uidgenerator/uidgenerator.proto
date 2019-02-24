@@ -20,12 +20,13 @@ service UidgeneratorApi {
 
 // The request message containing the user's name.
 message CreateUidRequest {
+  // 分区号码，CreateUidResponse.uid = area_code + baiduUidGenerator.generated.uid
+  string area_code = 1;
 }
 
 // The uidgenerator resource message
 message CreateUidResponse {
-  // 每个资源都有一个唯一资源名称
-  // Resource name of a uidgenerator. For example: "uidgenerators/uidgenerator123".
+  // uid = CreateUidRequest.area_code + baiduUidGenerator.generated.uid
   string uid = 1;
 
   google.rpc.Status status = 2;
