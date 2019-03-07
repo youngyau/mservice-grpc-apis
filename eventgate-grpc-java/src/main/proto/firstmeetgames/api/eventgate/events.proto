@@ -12,8 +12,8 @@ import "google/protobuf/timestamp.proto";
 
 message Event {
   oneof message {
-    UserAddEvent userAddEvent = 1;
-    UserUpdateEvent userUpdateEvent = 2;
+    UserAddedEvent userAddEvent = 1;
+    UserUpdatedEvent userUpdateEvent = 2;
   }
 }
 
@@ -23,7 +23,7 @@ enum EventCategory {
   USER_UPDATE_EVENT = 2;
 }
 
-message UserAddEvent {
+message UserAddedEvent {
   string user_id = 1;
   string username = 2;
   string user_source = 3;
@@ -36,7 +36,7 @@ message UserAddEvent {
   map<string, string> extension_data = 99;
 }
 
-message UserUpdateEvent {
+message UserUpdatedEvent {
   string user_id = 1;
   string username = 2;
   string user_source = 3;
