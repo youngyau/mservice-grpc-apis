@@ -1,0 +1,33 @@
+syntax = "proto3";
+package firstmeetgames.api.eventgate;
+
+option java_multiple_files = true;
+option java_package = "com.github.firstmeetgames.mservice.grpc.apis.eventgate";
+option java_outer_classname = "EventsProto";
+
+import "google/api/annotations.proto";
+import "firstmeetgames/api/common/common.proto";
+import "google/rpc/status.proto";
+import "google/protobuf/timestamp.proto";
+
+message Event {
+  oneof message {
+    UserAddEvent userAddEvent = 1;
+    UserUpdateEvent userUpdateEvent = 2;
+  }
+}
+
+enum EventCategory {
+  UNKNOWN = 0;
+  USER_ADD_EVENT = 1;
+  USER_UPDATE_EVENT = 2;
+}
+message UserAddEvent {
+  string userId = 1;
+  map<string, string> profileData = 2;
+}
+
+message UserUpdateEvent {
+  string userId = 1;
+  map<string, string> profileData = 2;
+}
