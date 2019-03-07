@@ -35,12 +35,3 @@ message PublishEventResponse {
   Event event = 1;
   // Next Index = 2
 }
-
-message Event {
-  oneof event {
-    UserAddEvent userAddEvent = 1;
-    UserUpdateEvent userUpdateEvent = 2;
-    // Next Index = 3
-  }
-}
-
