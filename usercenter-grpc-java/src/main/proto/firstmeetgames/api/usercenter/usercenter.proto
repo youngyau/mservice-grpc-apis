@@ -7,6 +7,7 @@ option java_package = "com.github.firstmeetgames.mservice.grpc.apis.usercenter";
 option java_outer_classname = "ClientApiProto";
 
 import "firstmeetgames/api/common/common.proto";
+import "firstmeetgames/api/common/events.proto";
 import "google/rpc/status.proto";
 import "google/protobuf/timestamp.proto";
 
@@ -20,6 +21,12 @@ service UsercenterApi {
   }
 
   rpc CreateUserToken (CreateUserTokenRequest) returns (CreateUserTokenResponse) {
+  }
+
+  rpc HandlerUserAddedEvent (HandlerUserAddedEventRequest) returns (HandlerUserAddedEventResponse) {
+  }
+
+  rpc HandlerUserUpdatedEvent (HandlerUserUpdatedEventRequest) returns (HandlerUserUpdatedEventResponse) {
   }
 
 }
@@ -70,4 +77,20 @@ message CreateUserTokenResponse {
   string refreshToken = 2;
 
   google.rpc.Status status = 3;
+}
+
+message HandlerUserAddedEventRequest {
+  firstmeetgames.api.common.UserAddedEvent userAddedEvent = 1;
+}
+
+message HandlerUserAddedEventResponse {
+  google.rpc.Status status = 1;
+}
+
+message HandlerUserUpdatedEventRequest {
+  firstmeetgames.api.common.UserUpdatedEvent userUpdatedEvent = 1;
+}
+
+message HandlerUserUpdatedEventResponse {
+  google.rpc.Status status = 1;
 }

@@ -1,13 +1,11 @@
 syntax = "proto3";
-package firstmeetgames.api.eventgate;
+package firstmeetgames.api.common;
 
 option java_multiple_files = true;
-option java_package = "com.github.firstmeetgames.mservice.grpc.apis.eventgate";
+option java_package = "com.github.firstmeetgames.mservice.grpc.apis.common";
 option java_outer_classname = "EventsProto";
 
-import "google/api/annotations.proto";
 import "firstmeetgames/api/common/common.proto";
-import "google/rpc/status.proto";
 import "google/protobuf/timestamp.proto";
 
 message Event {

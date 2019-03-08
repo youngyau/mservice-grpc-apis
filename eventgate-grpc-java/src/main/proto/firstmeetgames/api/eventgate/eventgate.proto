@@ -9,7 +9,7 @@ option java_outer_classname = "EventgateApiProto";
 
 import "google/api/annotations.proto";
 import "firstmeetgames/api/common/common.proto";
-import "firstmeetgames/api/eventgate/events.proto";
+import "firstmeetgames/api/common/events.proto";
 import "google/rpc/status.proto";
 import "google/protobuf/timestamp.proto";
 
