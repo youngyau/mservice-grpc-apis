@@ -27,11 +27,11 @@ service EventgateApi {
 
 // The request message containing the user's name.
 message PublishEventRequest {
-  Event event = 1;
+  firstmeetgames.api.common.Event event = 1;
   // Next Index = 2
 }
 
 message PublishEventResponse {
-  Event event = 1;
+  google.rpc.Status status = 1;
   // Next Index = 2
 }
