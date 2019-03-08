@@ -11,8 +11,8 @@ import "google/protobuf/timestamp.proto";
 message Event {
   EventCategory category=1;
   oneof message {
-    UserAddedEvent userAddEvent = 2;
-    UserUpdatedEvent userUpdateEvent = 3;
+    UserAddedEvent userAddedEvent = 2;
+    UserUpdatedEvent userUpdatedEvent = 3;
   }
 }
 
