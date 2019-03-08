@@ -7,7 +7,6 @@ option java_package = "com.github.firstmeetgames.mservice.grpc.apis.usercenter";
 option java_outer_classname = "ClientApiProto";
 
 import "firstmeetgames/api/common/common.proto";
-import "firstmeetgames/api/common/events.proto";
 import "google/rpc/status.proto";
 import "google/protobuf/timestamp.proto";
 
@@ -23,10 +22,10 @@ service UsercenterApi {
   rpc CreateUserToken (CreateUserTokenRequest) returns (CreateUserTokenResponse) {
   }
 
-  rpc HandlerUserAddedEvent (HandlerUserAddedEventRequest) returns (HandlerUserAddedEventResponse) {
+  rpc AddUserProfile (AddUserProfileRequest) returns (AddUserProfileResponse) {
   }
 
-  rpc HandlerUserUpdatedEvent (HandlerUserUpdatedEventRequest) returns (HandlerUserUpdatedEventResponse) {
+  rpc UpdateUserProfile (UpdateUserProfileRequest) returns (UpdateUserProfileResponse) {
   }
 
 }
@@ -79,18 +78,37 @@ message CreateUserTokenResponse {
   google.rpc.Status status = 3;
 }
 
-message HandlerUserAddedEventRequest {
-  firstmeetgames.api.common.UserAddedEvent userAddedEvent = 1;
+message AddUserProfileRequest {
+  string user_id = 1;
+  string username = 2;
+  string user_source = 3;
+  string client_id = 4;
+  bool upgraded = 5;
+  bool mobile_bound = 6;
+  bool email_verified = 7;
+  bool real_name_authenticated = 8;
+  google.protobuf.Timestamp created_at = 88;
+  map<string, string> extension_data = 99;
 }
 
-message HandlerUserAddedEventResponse {
+message AddUserProfileResponse {
   google.rpc.Status status = 1;
 }
 
-message HandlerUserUpdatedEventRequest {
-  firstmeetgames.api.common.UserUpdatedEvent userUpdatedEvent = 1;
+message UpdateUserProfileRequest {
+  string user_id = 1;
+  string username = 2;
+  string user_source = 3;
+  string client_id = 4;
+  bool upgraded = 5;
+  bool mobile_bound = 6;
+  bool email_verified = 7;
+  bool real_name_authenticated = 8;
+  repeated string updated_field = 9;
+  google.protobuf.Timestamp updated_at = 88;
+  map<string, string> extension_data = 99;
 }
 
-message HandlerUserUpdatedEventResponse {
+message UpdateUserProfileResponse {
   google.rpc.Status status = 1;
 }
