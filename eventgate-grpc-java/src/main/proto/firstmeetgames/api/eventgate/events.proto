@@ -44,7 +44,6 @@ message UserUpdatedEvent {
   bool mobile_bound = 6;
   bool email_verified = 7;
   bool real_name_authenticated = 8;
-  repeated string updated_field = 9;
   google.protobuf.Timestamp updated_at = 88;
   map<string, string> extension_data = 99;
 }
