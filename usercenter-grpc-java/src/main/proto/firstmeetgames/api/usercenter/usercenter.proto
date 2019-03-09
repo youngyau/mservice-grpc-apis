@@ -4,9 +4,10 @@ package firstmeetgames.api.usercenter;
 
 option java_multiple_files = true;
 option java_package = "com.github.firstmeetgames.mservice.grpc.apis.usercenter";
-option java_outer_classname = "ClientApiProto";
+option java_outer_classname = "UsercenterApiProto";
 
 import "firstmeetgames/api/common/common.proto";
+import "firstmeetgames/api/usercenter/user_profile.proto";
 import "google/rpc/status.proto";
 import "google/protobuf/field_mask.proto";
 import "google/protobuf/timestamp.proto";
@@ -79,21 +80,8 @@ message CreateUserTokenResponse {
   google.rpc.Status status = 3;
 }
 
-message UserProfile {
-  string user_id = 1;
-  string username = 2;
-  string user_source = 3;
-  string client_id = 4;
-  bool upgraded = 5;
-  bool mobile_bound = 6;
-  bool email_verified = 7;
-  bool real_name_authenticated = 8;
-  google.protobuf.Timestamp created_at = 88;
-  map<string, string> extension_data = 99;
-}
-
 message AddUserProfileRequest {
-  UserProfile user_profile = 1;
+  firstmeetgames.api.usercenter.UserProfile user_profile = 1;
 }
 
 message AddUserProfileResponse {
@@ -101,7 +89,7 @@ message AddUserProfileResponse {
 }
 
 message UpdateUserProfileRequest {
-  UserProfile user_profile = 1;
+  firstmeetgames.api.usercenter.UserProfile user_profile = 1;
   google.protobuf.FieldMask update_mask = 2;
 }
 

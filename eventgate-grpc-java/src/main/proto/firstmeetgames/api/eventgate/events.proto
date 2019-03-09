@@ -1,12 +1,13 @@
 syntax = "proto3";
-package firstmeetgames.api.common;
+package firstmeetgames.api.eventgate;
 
 option java_multiple_files = true;
-option java_package = "com.github.firstmeetgames.mservice.grpc.apis.common";
+option java_package = "com.github.firstmeetgames.mservice.grpc.apis.eventgate";
 option java_outer_classname = "EventsProto";
 
 import "firstmeetgames/api/common/common.proto";
 import "google/protobuf/timestamp.proto";
+import "google/protobuf/field_mask.proto";
 
 message Event {
   EventCategory category = 1;
@@ -31,8 +32,8 @@ message UserAddedEvent {
   bool mobile_bound = 6;
   bool email_verified = 7;
   bool real_name_authenticated = 8;
-  google.protobuf.Timestamp created_at = 88;
-  map<string, string> extension_data = 99;
+  google.protobuf.Timestamp created_at = 100;
+  map<string, string> extension_data = 101;
 }
 
 message UserUpdatedEvent {
@@ -44,6 +45,7 @@ message UserUpdatedEvent {
   bool mobile_bound = 6;
   bool email_verified = 7;
   bool real_name_authenticated = 8;
-  google.protobuf.Timestamp updated_at = 88;
-  map<string, string> extension_data = 99;
+  google.protobuf.Timestamp updated_at = 100;
+  map<string, string> extension_data = 101;
+  google.protobuf.FieldMask update_mask = 102;
 }
