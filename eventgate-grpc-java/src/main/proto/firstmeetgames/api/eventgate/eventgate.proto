@@ -27,7 +27,7 @@ service EventgateApi {
 
 // The request message containing the user's name.
 message PublishEventRequest {
-  firstmeetgames.api.common.Event event = 1;
+  firstmeetgames.api.eventgate.Event event = 1;
   // Next Index = 2
 }
 
