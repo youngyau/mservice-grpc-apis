@@ -82,6 +82,7 @@ message CreateUserTokenResponse {
 
 message AddUserProfileRequest {
   firstmeetgames.api.usercenter.UserProfile user_profile = 1;
+  google.protobuf.Timestamp created_at = 10;
 }
 
 message AddUserProfileResponse {
@@ -91,6 +92,7 @@ message AddUserProfileResponse {
 message UpdateUserProfileRequest {
   firstmeetgames.api.usercenter.UserProfile user_profile = 1;
   google.protobuf.FieldMask update_mask = 2;
+  google.protobuf.Timestamp updated_at = 10;
 }
 
 message UpdateUserProfileResponse {
