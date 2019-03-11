@@ -42,5 +42,7 @@ message UserAddedEvent {
 
 message UserUpdatedEvent {
   UserInfo user_info = 1;
-  google.protobuf.Timestamp updated_at = 10;
+  google.protobuf.FieldMask update_mask = 10;
+  google.protobuf.Timestamp updated_at = 11;
+
 }
