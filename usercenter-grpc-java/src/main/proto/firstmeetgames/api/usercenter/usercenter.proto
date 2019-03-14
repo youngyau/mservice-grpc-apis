@@ -4,10 +4,12 @@ package firstmeetgames.api.usercenter;
 
 option java_multiple_files = true;
 option java_package = "com.github.firstmeetgames.mservice.grpc.apis.usercenter";
-option java_outer_classname = "ClientApiProto";
+option java_outer_classname = "UsercenterApiProto";
 
 import "firstmeetgames/api/common/common.proto";
+import "firstmeetgames/api/usercenter/user_profile.proto";
 import "google/rpc/status.proto";
+import "google/protobuf/field_mask.proto";
 import "google/protobuf/timestamp.proto";
 
 // The greeter service definition.
@@ -20,6 +22,12 @@ service UsercenterApi {
   }
 
   rpc CreateUserToken (CreateUserTokenRequest) returns (CreateUserTokenResponse) {
+  }
+
+  rpc AddUserProfile (AddUserProfileRequest) returns (AddUserProfileResponse) {
+  }
+
+  rpc UpdateUserProfile (UpdateUserProfileRequest) returns (UpdateUserProfileResponse) {
   }
 
 }
@@ -70,4 +78,23 @@ message CreateUserTokenResponse {
   string refreshToken = 2;
 
   google.rpc.Status status = 3;
+}
+
+message AddUserProfileRequest {
+  firstmeetgames.api.usercenter.UserProfile user_profile = 1;
+  google.protobuf.Timestamp created_at = 10;
+}
+
+message AddUserProfileResponse {
+  google.rpc.Status status = 1;
+}
+
+message UpdateUserProfileRequest {
+  firstmeetgames.api.usercenter.UserProfile user_profile = 1;
+  google.protobuf.FieldMask update_mask = 2;
+  google.protobuf.Timestamp updated_at = 10;
+}
+
+message UpdateUserProfileResponse {
+  google.rpc.Status status = 1;
 }

@@ -5,15 +5,15 @@ option java_multiple_files = true;
 option java_package = "com.github.firstmeetgames.mservice.grpc.apis.eventgate";
 option java_outer_classname = "EventsProto";
 
-import "google/api/annotations.proto";
 import "firstmeetgames/api/common/common.proto";
-import "google/rpc/status.proto";
 import "google/protobuf/timestamp.proto";
+import "google/protobuf/field_mask.proto";
 
 message Event {
+  EventCategory category = 1;
   oneof message {
-    UserAddedEvent userAddEvent = 1;
-    UserUpdatedEvent userUpdateEvent = 2;
+    UserAddedEvent userAddedEvent = 2;
+    UserUpdatedEvent userUpdatedEvent = 3;
   }
 }
 
@@ -23,28 +23,26 @@ enum EventCategory {
   USER_UPDATE_EVENT = 2;
 }
 
-message UserAddedEvent {
+message UserInfo {
   string user_id = 1;
   string username = 2;
   string user_source = 3;
   string client_id = 4;
-  bool upgraded=5;
-  bool mobile_bound=6;
-  bool email_verified=7;
-  bool real_name_authenticated=8;
-  google.protobuf.Timestamp created_at = 88;
-  map<string, string> extension_data = 99;
+  bool upgraded = 5;
+  bool mobile_bound = 6;
+  bool email_verified = 7;
+  bool real_name_authenticated = 8;
+  map<string, string> extension_data = 100;
+}
+
+message UserAddedEvent {
+  UserInfo user_info = 1;
+  google.protobuf.Timestamp created_at = 10;
 }
 
 message UserUpdatedEvent {
-  string user_id = 1;
-  string username = 2;
-  string user_source = 3;
-  string client_id = 4;
-  bool upgraded=5;
-  bool mobile_bound=6;
-  bool email_verified=7;
-  bool real_name_authenticated=8;
-  google.protobuf.Timestamp updated_at = 88;
-  map<string, string> extension_data = 99;
+  UserInfo user_info = 1;
+  google.protobuf.FieldMask update_mask = 10;
+  google.protobuf.Timestamp updated_at = 11;
+
 }

@@ -1,5 +1,5 @@
-rootProject.ext.grpcVersion = "1.12.0"
-rootProject.ext.protocVersion = "3.5.1"
+rootProject.ext.grpcVersion = "1.19.0"
+rootProject.ext.protocVersion = "3.6.1"
 rootProject.ext.GSON_VERSION = "2.8.0"
 rootProject.ext.PROTOC_GEN_JAVALITE_VERSION = "3.0.0"
 rootProject.ext.PROTOBUF_JAVA_VERSION = "3.4.0"
