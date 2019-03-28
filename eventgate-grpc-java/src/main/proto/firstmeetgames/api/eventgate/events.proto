@@ -14,6 +14,8 @@ message Event {
   oneof message {
     UserAddedEvent userAddedEvent = 2;
     UserUpdatedEvent userUpdatedEvent = 3;
+    OrderCreatedEvent orderCreatedEvent = 4;
+    OrderPayedEvent orderPayedEvent = 5;
   }
 }
 
@@ -21,6 +23,39 @@ enum EventCategory {
   UNKNOWN = 0;
   USER_ADD_EVENT = 1;
   USER_UPDATE_EVENT = 2;
+  ORDER_CREATED_EVENT = 3;
+  ORDER_PAYED_EVENT = 4;
+  ORDER_SHIPPED_EVENT = 5;
+}
+
+enum Channel {
+  UNKNOWN = 0;
+  WEIXIN = 1;
+  ZHIFUBAO = 2;
+  YIBAO = 3;
+  HUAWEI = 4;
+  OPPO =5;
+  VIVO = 6;
+  UC = 7;
+  YYB = 8;
+  XIAOMI = 9;
+  SAMSUNG = 10;
+  MEIZU = 11;
+  NUBIA =12;
+  PPS = 13;
+  T360 = 14;
+  LENOVO = 15;
+  GIONEE =16;
+  YUEWEN =17;
+  BAIDU = 18;
+  T4399 = 19;
+  PAPA = 20;
+  COOLPAD = 21;
+  BLIBLI = 22;
+  DANGLE = 23;
+  APPLE = 24;
+  GOOGLE = 25;
+  BLUE = 26;
 }
 
 message UserInfo {
@@ -45,4 +80,14 @@ message UserUpdatedEvent {
   google.protobuf.FieldMask update_mask = 10;
   google.protobuf.Timestamp updated_at = 11;
 
+}
+
+message OrderCreatedEvent {
+  string order_id = 1;
+  Channel channel = 2;
+}
+
+message OrderPayedEvent {
+  string order_id = 1;
+  Channel channel = 2;
 }
