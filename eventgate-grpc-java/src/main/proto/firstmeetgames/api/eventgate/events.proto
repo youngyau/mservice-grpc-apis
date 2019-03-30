@@ -28,7 +28,7 @@ enum EventCategory {
 }
 
 enum Channel {
-  UNKNOWN = 0;
+  NONE = 0;
   WEIXIN = 1;
   ZHIFUBAO = 2;
   YIBAO = 3;
