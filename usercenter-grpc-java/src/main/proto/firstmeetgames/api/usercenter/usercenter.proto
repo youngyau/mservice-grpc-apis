@@ -33,26 +33,26 @@ service UsercenterApi {
 }
 
 message GetClientRequest {
-  string clientId = 1;
+  string client_id = 1;
 }
 
 message GetClientResponse {
-  string clientId = 1;
+  string client_id = 1;
 
-  string clientSecret = 2;
+  string client_secret = 2;
 
   string scopes = 3;
 
-  string authorizedGrantTypes = 4;
+  string authorized_grant_types = 4;
 
   google.rpc.Status status = 5;
 }
 
 message CheckClientRequest {
 
-  string clientId = 1;
+  string client_id = 1;
 
-  string clientSecret = 2;
+  string client_secret = 2;
 }
 
 message CheckClientResponse {
@@ -60,11 +60,11 @@ message CheckClientResponse {
 }
 
 message CreateUserTokenRequest {
-  string clientId = 1;
+  string client_id = 1;
 
-  string userId = 2;
+  string user_id = 2;
 
-  string userSource = 3;
+  string user_source = 3;
 
   string username = 4;
 
@@ -73,9 +73,9 @@ message CreateUserTokenRequest {
 
 message CreateUserTokenResponse {
 
-  string accessToken = 1;
+  string access_token = 1;
 
-  string refreshToken = 2;
+  string refresh_token = 2;
 
   google.rpc.Status status = 3;
 }

@@ -12,15 +12,20 @@ import "google/protobuf/field_mask.proto";
 message Event {
   EventCategory category = 1;
   oneof message {
-    UserAddedEvent userAddedEvent = 2;
-    UserUpdatedEvent userUpdatedEvent = 3;
+    UserAddedEvent user_added_event = 2;
+    UserUpdatedEvent user_updated_event = 3;
   }
+  int32 handled_times = 10000;
 }
 
 enum EventCategory {
   UNKNOWN = 0;
   USER_ADD_EVENT = 1;
   USER_UPDATE_EVENT = 2;
+}
+
+enum EventQueue {
+  EVENT_QUEUE = 0;
 }
 
 message UserInfo {
