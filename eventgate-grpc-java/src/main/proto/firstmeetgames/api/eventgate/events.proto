@@ -22,8 +22,8 @@ message Event {
 
 enum EventCategory {
   UNKNOWN = 0;
-  USER_ADD_EVENT = 1;
-  USER_UPDATE_EVENT = 2;
+  USER_ADDED_EVENT = 1;
+  USER_UPDATED_EVENT = 2;
   ORDER_CREATED_EVENT = 3;
   ORDER_PAYED_EVENT = 4;
 }
